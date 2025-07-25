@@ -12,3 +12,6 @@ runs/
 processed_data/
 plasma_diagnostics_dataset/
 data/
+width_model.eqx
+.gitignore
+.DS_Store

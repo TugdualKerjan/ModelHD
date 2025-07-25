@@ -23,27 +23,26 @@ class WidthModel(eqx.Module):
             nn.Conv1d(1, 1, kernel_size=20, padding="SAME", key=k3)
         ]
         self.dense = [
-            nn.Linear((61 * 20) + (20), 40, key=k4),
-            nn.Linear(40, 1, key=k5),
-        ]
-
-        self.dense = [
-            nn.Linear(40, 1, key=k1)
+            nn.Linear((61 * 40) + (40), 128, key=k4),
+            nn.Linear(128, 64, key=k5),
+            nn.Linear(64, 1, key=jax.random.split(key, 6)[5]),
         ]
 
     def __call__(self, q_layers: jax.Array, amplitude: jax.Array) -> jax.Array:
-        # q_layers = jnp.expand_dims(q_layers, axis=0)  # Add batch dimension
-        # for layer in self.q_layers_conv:
-        #     q_layers = layer(q_layers)
-        #     q_layers = jax.nn.sigmoid(q_layers)
+        q_layers = jnp.expand_dims(q_layers, axis=0)  # Add channel dimension
+        for layer in self.q_layers_conv:
+            q_layers = layer(q_layers)
+            q_layers = jax.nn.relu(q_layers)  # Use ReLU instead of sigmoid
 
-        # x = jnp.concatenate([q_layers.flatten(), amplitude.flatten()], axis=-1)
-        # for layer in self.dense[:-1]:
-        #     x = layer(x)
-        #     x = jax.nn.sigmoid(x)
-        # x = self.dense[-1](x)
+        amplitude = jnp.expand_dims(amplitude, axis=0)  # Add channel dimension
+        for layer in self.amplitude_conv:
+            amplitude = layer(amplitude)
+            amplitude = jax.nn.relu(amplitude)  # Use ReLU instead of sigmoid
 
-        x = self.dense[-1](amplitude)
+        x = jnp.concatenate([q_layers.flatten(), amplitude.flatten()], axis=-1)
+        for layer in self.dense[:-1]:
+            x = layer(x)
+            x = jax.nn.relu(x)  # Use ReLU for hidden layers
+        x = self.dense[-1](x)  # No activation for output layer
 
-
-        return x
+        return x.squeeze()
