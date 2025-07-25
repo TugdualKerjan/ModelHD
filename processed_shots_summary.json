@@ -1,0 +1,123 @@
+{
+  "n_shots": 11,
+  "shot_numbers": [
+    "85121",
+    "66674",
+    "71243",
+    "85130",
+    "85117",
+    "85121",
+    "66441",
+    "60123",
+    "60218",
+    "66441",
+    "85130"
+  ],
+  "time_ranges": {
+    "min_start": 0.2555,
+    "max_end": 2.3385,
+    "min_duration": 0.04899999999999993,
+    "max_duration": 1.8659999999999999
+  },
+  "approved_shots": [
+    {
+      "shot_number": "85121",
+      "filepath": "data/shot_85121_data_early.h5",
+      "time_start": 0.2555,
+      "time_end": 0.5925,
+      "duration": 0.337,
+      "n_points": 1000,
+      "valid_interpolation": true
+    },
+    {
+      "shot_number": "66674",
+      "filepath": "data/shot_66674_data.h5",
+      "time_start": 0.5295000000000001,
+      "time_end": 0.6904999999999999,
+      "duration": 0.1609999999999998,
+      "n_points": 1000,
+      "valid_interpolation": true
+    },
+    {
+      "shot_number": "71243",
+      "filepath": "data/shot_71243_data.h5",
+      "time_start": 1.1304999999999998,
+      "time_end": 2.2744999999999997,
+      "duration": 1.144,
+      "n_points": 1000,
+      "valid_interpolation": true
+    },
+    {
+      "shot_number": "85130",
+      "filepath": "data/shot_85130_data_late.h5",
+      "time_start": 1.2845,
+      "time_end": 1.4355000000000002,
+      "duration": 0.15100000000000025,
+      "n_points": 1000,
+      "valid_interpolation": true
+    },
+    {
+      "shot_number": "85117",
+      "filepath": "data/shot_85117_data.h5",
+      "time_start": 1.0014999999999998,
+      "time_end": 1.8735000000000002,
+      "duration": 0.8720000000000003,
+      "n_points": 1000,
+      "valid_interpolation": true
+    },
+    {
+      "shot_number": "85121",
+      "filepath": "data/shot_85121_data_mid.h5",
+      "time_start": 0.6465000000000001,
+      "time_end": 0.7915000000000001,
+      "duration": 0.14500000000000002,
+      "n_points": 1000,
+      "valid_interpolation": true
+    },
+    {
+      "shot_number": "66441",
+      "filepath": "data/shot_66441_data_late.h5",
+      "time_start": 1.3305,
+      "time_end": 1.3795,
+      "duration": 0.04899999999999993,
+      "n_points": 1000,
+      "valid_interpolation": true
+    },
+    {
+      "shot_number": "60123",
+      "filepath": "data/shot_60123_data.h5",
+      "time_start": 0.4725,
+      "time_end": 2.3385,
+      "duration": 1.8659999999999999,
+      "n_points": 1000,
+      "valid_interpolation": true
+    },
+    {
+      "shot_number": "60218",
+      "filepath": "data/shot_60218_data.h5",
+      "time_start": 0.5005,
+      "time_end": 2.2904999999999998,
+      "duration": 1.7899999999999998,
+      "n_points": 1000,
+      "valid_interpolation": true
+    },
+    {
+      "shot_number": "66441",
+      "filepath": "data/shot_66441_data.h5",
+      "time_start": 0.5625,
+      "time_end": 0.7805,
+      "duration": 0.21799999999999997,
+      "n_points": 1000,
+      "valid_interpolation": true
+    },
+    {
+      "shot_number": "85130",
+      "filepath": "data/shot_85130_data_early.h5",
+      "time_start": 0.9955,
+      "time_end": 1.0915000000000001,
+      "duration": 0.09600000000000009,
+      "n_points": 1000,
+      "valid_interpolation": true
+    }
+  ]
+}
